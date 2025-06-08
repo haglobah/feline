@@ -36,7 +36,7 @@
 
         packages.default =
           (pkgs.lean.buildLeanPackage {
-            name = "Example";
+            name = "feline";
             roots = ["Main"];
             src = pkgs.lib.cleanSource ./.;
           })

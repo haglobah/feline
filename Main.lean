@@ -12,7 +12,7 @@ partial def dump (stream : IO.FS.Stream) : IO Unit := do
 def fileStream (filename : System.FilePath) : IO (Option IO.FS.Stream) := do
   let fileExists <- filename.pathExists
   match fileExists with
-  | true =>
+  | false =>
     let stderr <- IO.getStderr
     stderr.putStrLn s!"File not found: {filename}"
     pure none
